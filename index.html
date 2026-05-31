@@ -95,17 +95,17 @@
         /* Adjusted: Tagline is now smaller and acts as a clean kicker line */
         /* Adjusted: Tagline is now much smaller, crisp, and clean */
         #showcase p {
-            font-size: 5px;            /* Dropped down from 20px for a clean look */
+            font-size: 10px;            /* Dropped down from 20px for a clean look */
             font-weight: 400;           /* Clean, readable font weight */
             text-transform: uppercase;  /* Keeps the professional, all-caps styling */
             letter-spacing: 4px;        /* Spreads the letters out nicely across the top */
-            color: rgba(255, 255, 255, 0.7); /* Slightly muted white so it doesn't fight the main title */
-            margin: 0 0 10px 0;         /* Keeps a small gap above your main brand name */
+            color: rgba(255, 255, 255, 0.75); /* Slightly muted white so it doesn't fight the main title */
+            margin: 0 0 15px 0;         /* Keeps a small gap above your main brand name */
         }
 
         /* Adjusted: Main business name is now larger and highly prominent */
         #showcase h1 {
-            font-size: 52px; 
+            font-size: 56px; 
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -117,7 +117,7 @@
         @media(max-width: 768px) {
             #showcase { min-height: 450px; }
             #showcase h1 { font-size: 32px; }
-            #showcase p { font-size: 8px; }
+            #showcase p { font-size: 12px !important; } /* Keeps it small on mobile phones */
             #showcase .container { padding: 20px; }
         }
 
