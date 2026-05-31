@@ -69,7 +69,8 @@
         /* Hero Section */
         #showcase {
             min-height: 400px;
-            background: #333 url('https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            background: #333 url('https://raw.githubusercontent.com/Eldeluc/Eldeluc.github.io/master/Eldeluc_Tech_Rescue.png') no-repeat center center/contain;
+            background-color: #1a1a1a;
             text-align: center;
             color: #fff;
             display: flex;
@@ -81,12 +82,10 @@
         #showcase h1 {
             font-size: 55px;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        }
-        
-        #showcase p {
-            font-size: 20px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
         }
 
         /* About Section */
@@ -105,58 +104,44 @@
 
         .service-item {
             display: inline-block;
-            width: 28%;
-            margin: 1%;
+            width: 30%;
+            margin: 10px;
             background: #fff;
-            padding: 25px;
+            padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             vertical-align: top;
-            text-align: left;
             box-sizing: border-box;
-        }
-
-        .service-item h3 {
-            color: #229954;
-            margin-top: 0;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
         }
 
         /* Calculator Section */
         #calculator-section {
             background-color: #eef7f2;
-            padding: 60px 20px;
+            padding: 50px 20px;
             border-top: 1px solid #ddd;
             border-bottom: 1px solid #ddd;
+            text-align: center;
         }
 
         .calc-container {
-            max-width: 700px;
+            max-width: 650px;
             margin: auto;
             background: #fff;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .calc-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-bottom: 25px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: left;
         }
 
         .calc-group {
+            margin-bottom: 20px;
             display: flex;
             flex-direction: column;
-            text-align: left;
         }
 
         .calc-group label {
             font-weight: bold;
             margin-bottom: 5px;
-            color: #111;
         }
 
         .calc-group select, .calc-group input[type="range"] {
@@ -164,35 +149,39 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
-            width: 100%;
-            box-sizing: border-box;
         }
 
-        .range-wrap {
+        .slider-container {
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
-        .range-wrap span {
+        .slider-container span {
             font-weight: bold;
-            min-width: 70px;
+            min-width: 80px;
             color: #229954;
         }
 
-        /* Receipt Breakdown Box */
+        /* Dynamic Part Description Note */
+        #part-description-note {
+            font-style: italic;
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Receipt Box Layout */
         .receipt-box {
-            background: #fdfdfd;
+            background: #fafafa;
             border: 2px dashed #229954;
-            border-radius: 6px;
+            border-radius: 4px;
             padding: 20px;
-            margin-top: 20px;
-            text-align: left;
+            margin-top: 25px;
         }
 
         .receipt-box h4 {
             margin-top: 0;
-            color: #111;
             border-bottom: 1px solid #ddd;
             padding-bottom: 5px;
         }
@@ -201,7 +190,6 @@
             display: flex;
             justify-content: space-between;
             margin: 8px 0;
-            font-size: 15px;
         }
 
         .receipt-total {
@@ -249,10 +237,6 @@
             border-radius: 4px;
         }
 
-        .contact-form button:hover {
-            background: #1e8449;
-        }
-
         /* Footer */
         footer {
             background-color: #111;
@@ -265,19 +249,6 @@
             color: #229954;
             text-decoration: none;
         }
-
-        /* Responsive Breakpoints */
-        @media(max-width: 768px) {
-            header #branding, header nav {
-                float: none;
-                text-align: center;
-                width: 100%;
-            }
-            header nav { margin-top: 20px; }
-            header li { display: block; padding: 10px 0; }
-            .service-item { width: 100%; margin: 10px 0; }
-            .container { width: 90%; }
-        }
     </style>
 </head>
 <body>
@@ -289,8 +260,8 @@
                     <a href="#showcase" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
                         <img 
                             src="https://raw.githubusercontent.com/Eldeluc/Eldeluc.github.io/master/Eldeluc_Tech_Rescue.png" 
-                            alt="Logo" 
-                            style="height: 50px; margin-right: 15px;">
+                            alt="Black Diamond Labs Logo" 
+                            style="height: 50px; margin-top: 10px; margin-right: 15px;">
                         Eldeluc Tech Rescue
                     </a>
                 </h1>
@@ -299,7 +270,7 @@
                 <ul>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#calculator-section">Estimate Cost</a></li>
+                    <li><a href="#calculator-section">Estimator</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -309,95 +280,78 @@
     <section id="showcase">
         <div class="container">
             <h1>Expert Computer Repair & IT Services</h1>
-            <p>Your trusted neighborhood partner for hardware, recovery, and updates.</p>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
             <h2>About Eldeluc Tech Rescue</h2>
-            <p>Welcome to Eldeluc Tech Rescue. Operating locally right out of our apartment complex, we provide top-tier troubleshooting with maximum transparency. Our fair-pricing structure splits parts from labor, distinguishing active bench-time from automatic passive download/transfer windows to guarantee you only pay for true labor.</p>
+            <p>Welcome to Eldeluc Tech Rescue, where we are passionate about technology and dedicated to providing top-notch computer repair services. Our mission is to solve your tech problems efficiently and affordably. We feature a transparent pricing structure that breaks down costs explicitly into parts, active manual bench labor, and lower-rate automated passive processing labor.</p>
         </div>
     </section>
 
     <section id="services">
         <div class="container">
-            <h2>Our Pricing Architecture</h2>
-            <p style="max-width: 700px; margin: 0 auto 30px auto; color: #666;">We charge a flat rate for dedicated benchwork time, combined with a heavily reduced idle-rate for automated software installations and heavy data transfers.</p>
-            
+            <h2>Services Offered</h2>
             <div class="service-item">
-                <h3>Hardware Upgrades</h3>
-                <p><strong>Active Labor:</strong> 1 - 1.5 Hours<br><strong>Passive Labor:</strong> 1 - 2 Hours</p>
-                <p>Physical parts installation paired with standard operational system configuration or baseline cloning adjustments.</p>
+                <h3>Hardware Repair & Upgrades</h3>
+                <p>From broken screens to failing hard drives, we diagnose and repair all types of hardware issues. We also offer performance-boosting upgrades like RAM and SSD installation.</p>
             </div>
             <div class="service-item">
-                <h3>Virus & OS Restores</h3>
-                <p><strong>Active Labor:</strong> 1 Hour<br><strong>Passive Labor:</strong> 2 - 4 Hours</p>
-                <p>Deep-system environment cleaning, registry repair, complete operating system re-imaging, and configuration updates.</p>
+                <h3>Virus & Malware Removal</h3>
+                <p>Is your computer slow or behaving strangely? We'll deep-scan and remove viruses, spyware, and other malicious software to restore your system's performance and security.</p>
             </div>
             <div class="service-item">
-                <h3>Data Extraction</h3>
-                <p><strong>Active Labor:</strong> 0.5 - 1 Hour<br><strong>Passive Labor:</strong> Variable Scale</p>
-                <p>Extraction of integrity files from failing hard disks or target components, transferring onto external mediums based closely on volume size.</p>
+                <h3>Data Recovery</h3>
+                <p>Accidentally deleted important files or have a failing hard drive? We offer professional data recovery services to help you retrieve your precious photos, documents, and other files.</p>
             </div>
         </div>
     </section>
 
     <section id="calculator-section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 10px;">Instant Repair Estimator</h2>
-            <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto; color: #555;">Select your target technical failure to map structural tiering and adjust part requirements to approximate standard invoicing ranges.</p>
+            <h2>Instant Repair Cost Estimator</h2>
+            <p>Select your required service type and scale your hardware choices below to map out an explicit project estimation blueprint.</p>
             
             <div class="calc-container">
-                <div class="calc-grid">
-                    
-                    <div class="calc-group">
-                        <label for="repair-type">Select Repair Class:</label>
-                        <select id="repair-type" onchange="calculateEstimate()">
-                            <option value="storage">Storage Drive Replacement (HDD/SSD Upgrade)</option>
-                            <option value="virus">Virus Extirpation & System OS Reinstall</option>
-                            <option value="data">Pure Data Recovery & Archival Pull</option>
-                            <option value="general">General Diagnostics & Thermal Cleaning</option>
-                        </select>
-                    </div>
+                <div class="calc-group">
+                    <label for="job-select">Select Service Type:</label>
+                    <select id="job-select" onchange="onJobChange()"></select>
+                </div>
 
-                    <div class="calc-group">
-                        <label for="part-tier">Hardware Components Tier:</label>
-                        <select id="part-tier" onchange="calculateEstimate()">
-                            <option value="none">No Components Needed ($0)</option>
-                            <option value="low">Budget/Standard Component Tier (e.g., 500GB SSD / Basic Parts) (~$45)</option>
-                            <option value="mid">Mid-Tier Enterprise Grade (e.g., 2TB High-Speed NVMe) (~$110)</option>
-                            <option value="high">Maximum Capacity Array (e.g., Extreme Enterprise 8TB SSD) (~$600)</option>
-                        </select>
+                <div class="calc-group">
+                    <label for="part-slider">Hardware Part Scale (Low End vs. High End):</label>
+                    <div class="slider-container">
+                        <input type="range" id="part-slider" min="0" max="1" step="1" value="0" oninput="calculateEstimate()">
+                        <span id="part-tier-label">Low End</span>
                     </div>
+                    <div id="part-description-note"></div>
+                </div>
 
-                    <div class="calc-group">
-                        <label for="data-slider">Volume of Backup Data Involved:</label>
-                        <div class="range-wrap">
-                            <input type="range" id="data-slider" min="0" max="2000" step="100" value="100" oninput="updateSliderLabel(this.value); calculateEstimate();">
-                            <span id="data-label">100 GB</span>
-                        </div>
-                        <small style="color:#777; margin-top:4px;">*Data volume adds automated file verification cycles to our passive labor metric.</small>
+                <div class="calc-group">
+                    <label for="data-slider">Data Involved (Backup / Recovery Size):</label>
+                    <div class="slider-container">
+                        <input type="range" id="data-slider" min="0" max="2000" step="100" value="100" oninput="updateDataLabel(this.value); calculateEstimate();">
+                        <span id="data-label">100 GB</span>
                     </div>
-
                 </div>
 
                 <div class="receipt-box">
-                    <h4>Invoicing Matrix Breakdown</h4>
+                    <h4>Invoicing Matrix Calculation</h4>
                     <div class="receipt-line">
-                        <span>Hardware Cost Estimate:</span>
-                        <span id="receipt-parts">$0.00</span>
+                        <span>Selected Hardware Component:</span>
+                        <span id="receipt-part-cost">$0.00</span>
                     </div>
                     <div class="receipt-line">
-                        <span>Active Labor Component (<span id="receipt-active-hours">0</span> hrs):</span>
+                        <span>Active Manual Benchwork Labor (<span id="receipt-active-hours">0</span> hrs):</span>
                         <span id="receipt-active-cost">$0.00</span>
                     </div>
                     <div class="receipt-line">
-                        <span>Passive Maintenance Monitoring (<span id="receipt-passive-hours">0</span> hrs):</span>
+                        <span>Passive Monitoring / Process Cycles (<span id="receipt-passive-hours">0</span> hrs):</span>
                         <span id="receipt-passive-cost">$0.00</span>
                     </div>
                     <div class="receipt-total">
-                        <span>Estimated Project Total:</span>
+                        <span>Estimated Total Balance:</span>
                         <span id="receipt-total-cost">$0.00</span>
                     </div>
                 </div>
@@ -407,95 +361,163 @@
 
     <section id="contact">
         <div class="container">
-            <h2>Book Your Tech Rescue</h2>
-            <p>Submit your service configuration query below. Our localized Qubes deployment will log your inquiry safely, and we will get back to you with scheduling confirmation.</p>
+            <h2>Contact Us</h2>
+            <p>Ready to get your computer fixed? Fill out the form below and we'll get back to you with a free quote and consultation.</p>
             <form class="contact-form">
-                <input type="text" placeholder="Your Name / Unit Number" required>
-                <input type="email" placeholder="Your Email Address" required>
-                <textarea id="contact-desc" placeholder="Describe your computer issue..." rows="5" required></textarea>
-                <button type="submit">Submit Request Matrix</button>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea id="issue-description" placeholder="Describe your computer issue..." rows="5" required></textarea>
+                <button type="submit">Send Message</button>
             </form>
         </div>
     </section>
 
     <footer>
         <p>Eldeluc Tech Rescue &copy; 2026</p>
-        <p><a href="https://www.PayPal.Me/Eldeluc" target="_blank">Donate to Support Us</a></p>
+        <p><a href="https://www.PayPal.Me/Eldeluc">Donate to Support Us</a></p>
     </footer>
 
     <script>
-        // Adjust these base hourly pricing variables to scale your target margins
-        const ACTIVE_HOURLY_RATE = 60;  // $60 an hour for manual tool work/disassembly
-        const PASSIVE_HOURLY_RATE = 20; // $20 an hour for automated transfer windows
+        // Global baseline hourly service values
+        const BASE_ACTIVE_LABOR_RATE = 60.00;  // Flat cost for physical hands-on work
+        const BASE_PASSIVE_LABOR_RATE = 20.00; // Reduced cost for hands-off background operations
 
-        function updateSliderLabel(val) {
-            document.getElementById('data-label').innerText = val >= 1000 ? (val/1000).toFixed(1) + " TB" : val + " GB";
+        // Defining the object blueprints using modern JS Class architecture
+        class RepairJob {
+            constructor(id, name, lowPartDesc, lowPartCost, highPartDesc, highPartCost, activeLabor, basePassiveLabor, dataModifier) {
+                this.id = id;
+                this.name = name;
+                
+                // Hardware Part Variables
+                this.low_end_part_desc = lowPartDesc;
+                this.low_end_part_cost = lowPartCost;
+                this.high_end_part_desc = highPartDesc;
+                this.high_end_part_cost = highPartCost;
+                
+                // Labor Standard Unit Hour Variables
+                this.active_labor_estimate = activeLabor;
+                this.base_passive_labor_estimate = basePassiveLabor;
+                
+                // Functional math callback to scale passive hours based on data volume sizes
+                this.data_modifier = dataModifier; 
+            }
+        }
+
+        // Job Array Instantiation Matrix
+        const jobRegistry = [
+            new RepairJob(
+                'drive_replacement',
+                'Hard Drive / SSD Upgrade & OS Install',
+                '500GB Standard Budget SSD', 45.00,
+                '8TB Enterprise High-Capacity SSD', 620.00,
+                1.5, // Active hours (teardown, physical fitment, array initialization)
+                1.0, // Base passive hours (system deployment initialization)
+                (gb) => (gb / 300) // Adds 1 extra hour of passive transfer wait time per 300 GB
+            ),
+            new RepairJob(
+                'virus_removal',
+                'Virus Removal & OS Environment Optimization',
+                'No Hardware Required', 0.00,
+                'Premium Anti-Malware Software License', 40.00,
+                1.0, // Active hours (manual log sweeping, registry editing)
+                2.5, // Base passive hours (deep boot system sweeps and sector verification)
+                (gb) => (gb / 500) // Adds 1 passive hour per 500 GB scanned
+            ),
+            new RepairJob(
+                'data_recovery',
+                'Advanced File Recovery & Storage Extraction',
+                'USB 64GB Flash Drive Backup Medium', 15.00,
+                '4TB Rugged External Protection HDD', 130.00,
+                1.0, // Active hours (mounting hardware, bad sector overriding setup)
+                3.0, // Base passive hours (deep sector parsing time)
+                // Data recovery requires heavily custom passive math. Let's make it scale aggressively!
+                (gb) => (gb / 100) // Data Recovery intensive: Adds 1 full hour of passive computing time per 100 GB processed
+            ),
+            new RepairJob(
+                'general_repair',
+                'General System Cleanup & Thermal Maintenance',
+                'High-Efficiency Thermal Paste and Pads', 12.00,
+                'Premium Quiet Replacement Cooling Fan', 35.00,
+                1.0, // Active hours (disassembly, heatsink removal, physical debris detailing)
+                0.5, // Base passive hours (burn-in hardware stability stress test)
+                (gb) => 0 // Data amount does not impact basic hardware thermal rebuild timelines
+            )
+        ];
+
+        // Core execution and event lifecycle handling functions
+        function initializeEstimator() {
+            const selectEl = document.getElementById('job-select');
+            selectEl.innerHTML = '';
+            
+            jobRegistry.forEach(job => {
+                let opt = document.createElement('option');
+                opt.value = job.id;
+                opt.innerText = job.name;
+                selectEl.appendChild(opt);
+            });
+            
+            calculateEstimate();
+        }
+
+        function onJobChange() {
+            calculateEstimate();
+        }
+
+        function updateDataLabel(val) {
+            document.getElementById('data-label').innerText = val >= 1000 ? (val / 1000).toFixed(1) + " TB" : val + " GB";
         }
 
         function calculateEstimate() {
-            const repairType = document.getElementById('repair-type').value;
-            const partTier = document.getElementById('part-tier').value;
-            const dataVolume = parseInt(document.getElementById('data-slider').value);
+            const selectedJobId = document.getElementById('job-select').value;
+            const targetJob = jobRegistry.find(j => j.id === selectedJobId);
+            const partTierIsHigh = parseInt(document.getElementById('part-slider').value);
+            const totalDataGigabytes = parseInt(document.getElementById('data-slider').value);
 
-            let partsCost = 0;
-            let activeHours = 0;
-            let basePassiveHours = 0;
+            if (!targetJob) return;
 
-            // 1. Evaluate Parts Pricing Structure
-            switch(partTier) {
-                case 'none':  partsCost = 0; break;
-                case 'low':   partsCost = 45; break;
-                case 'mid':   partsCost = 110; break;
-                case 'high':  partsCost = 600; break;
+            // 1. Process Hardware Segment
+            let partCost = 0;
+            let partDescriptionText = "";
+            
+            if (partTierIsHigh === 1) {
+                partCost = targetJob.high_end_part_cost;
+                partDescriptionText = `Selected: ${targetJob.high_end_part_desc}`;
+                document.getElementById('part-tier-label').innerText = "High End";
+            } else {
+                partCost = targetJob.low_end_part_cost;
+                partDescriptionText = `Selected: ${targetJob.low_end_part_desc}`;
+                document.getElementById('part-tier-label').innerText = "Low End";
             }
+            document.getElementById('part-description-note').innerText = partDescriptionText;
 
-            // 2. Evaluate Base Service Tiers
-            switch(repairType) {
-                case 'storage':
-                    activeHours = 1.5; 
-                    basePassiveHours = 1.0;
-                    break;
-                case 'virus':
-                    activeHours = 1.0;
-                    basePassiveHours = 3.0;
-                    break;
-                case 'data':
-                    activeHours = 0.5;
-                    basePassiveHours = 2.0;
-                    break;
-                case 'general':
-                    activeHours = 1.0;
-                    basePassiveHours = 0.5;
-                    break;
-            }
+            // 2. Compute Labor Segment using Custom Class Classifications
+            const activeHours = targetJob.active_labor_estimate;
+            
+            // Calculate dynamic passive hour curve using the custom lambda function variable assigned per class structure
+            const calculatedPassiveHours = targetJob.base_passive_labor_estimate + targetJob.data_modifier(totalDataGigabytes);
+            
+            // Round nicely to standard half-hour fractions
+            const roundedPassiveHours = Math.round(calculatedPassiveHours * 2) / 2;
 
-            // 3. Scale Passive Labor based on Data Size (e.g., adding roughly 1 hour per 400GB transferred)
-            let dataProcessingPassiveHourAddon = dataVolume / 400;
-            let totalPassiveHours = basePassiveHours + dataProcessingPassiveHourAddon;
+            const activeLaborTotal = activeHours * BASE_ACTIVE_LABOR_RATE;
+            const passiveLaborTotal = roundedPassiveHours * BASE_PASSIVE_LABOR_RATE;
+            const finalCalculatedBill = partCost + activeLaborTotal + passiveLaborTotal;
 
-            // Round values cleanly for readability
-            totalPassiveHours = Math.round(totalPassiveHours * 2) / 2; 
+            // 3. Inject Calculations into Invoicing Matrix Breakdown Display
+            document.getElementById('receipt-part-cost').innerText = "$" + partCost.toFixed(2);
+            document.getElementById('receipt-active-hours').innerText = activeHours.toFixed(1);
+            document.getElementById('receipt-active-cost').innerText = "$" + activeLaborTotal.toFixed(2);
+            document.getElementById('receipt-passive-hours').innerText = roundedPassiveHours.toFixed(1);
+            document.getElementById('receipt-passive-cost').innerText = "$" + passiveLaborTotal.toFixed(2);
+            document.getElementById('receipt-total-cost').innerText = "$" + finalCalculatedBill.toFixed(2);
 
-            // Calculate costs
-            const activeLaborCost = activeHours * ACTIVE_HOURLY_RATE;
-            const passiveLaborCost = totalPassiveHours * PASSIVE_HOURLY_RATE;
-            const overallTotal = partsCost + activeLaborCost + passiveLaborCost;
-
-            // 4. Inject Calculations Back Into UI Elements
-            document.getElementById('receipt-parts').innerText = "$" + partsCost.toFixed(2);
-            document.getElementById('receipt-active-hours').innerText = activeHours;
-            document.getElementById('receipt-active-cost').innerText = "$" + activeLaborCost.toFixed(2);
-            document.getElementById('receipt-passive-hours').innerText = totalPassiveHours;
-            document.getElementById('receipt-passive-cost').innerText = "$" + passiveLaborCost.toFixed(2);
-            document.getElementById('receipt-total-cost').innerText = "$" + overallTotal.toFixed(2);
-
-            // Automatically pass details to message block structure for user ease
-            document.getElementById('contact-desc').value = `Hi Eldeluc! I generated a custom matrix quote for a [${repairType.toUpperCase()}] build.\n- Component Choice: ${partTier.toUpperCase()} tier.\n- Scaled Data: ${dataVolume} GB.\n- Projected Estimate: $${overallTotal.toFixed(2)}. \n\nMy machine details: `;
+            // Automatically construct user message layout template
+            document.getElementById('issue-description').value = `Hello! I generated an estimate package using the tool for: "${targetJob.name}".\nHardware Level: ${partTierIsHigh === 1 ? "High End" : "Low End"}\nData Volume Transfer Range: ${totalDataGigabytes} GB\nProject Estimate Reference: $${finalCalculatedBill.toFixed(2)}\n\nAdditional notes about my computer issue: `;
         }
 
-        // Initialize Calculation Matrix on page load-in
+        // Initialize script logic hooks on window load-in
         window.onload = function() {
-            calculateEstimate();
+            initializeEstimator();
         };
     </script>
 </body>
