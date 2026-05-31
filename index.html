@@ -66,26 +66,58 @@
             margin-top: 10px;
         }
         
-        /* Hero Section */
+        /* Updated Showcase Hero Section */
         #showcase {
-            min-height: 400px;
-            background: #333 url('https://raw.githubusercontent.com/Eldeluc/Eldeluc.github.io/master/Eldeluc_Tech_Rescue.png') no-repeat center center/contain;
-            background-color: #1a1a1a;
+            min-height: 600px; /* Increased from 400px to give content breathing room at 100% zoom */
+            background: #1a1a1a url('https://raw.githubusercontent.com/Eldeluc/Eldeluc.github.io/master/Eldeluc_Tech_Rescue.png') no-repeat center center/contain;
             text-align: center;
             color: #fff;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 40px 0; /* Padding ensures content never hits the absolute edges */
+            box-sizing: border-box;
         }
-        
+
+        /* This container creates a solid, clean backing card so text never clashes with the graphic background */
+        #showcase .container {
+            background: rgba(0, 0, 0, 0.75); /* Dark overlay for crisp contrast */
+            padding: 35px 50px;
+            border-radius: 8px;
+            border: 1px solid #229954; /* Subtle green accent border */
+            display: inline-block;
+            width: auto;
+            max-width: 85%;
+            box-sizing: border-box;
+        }
+
+        /* Adjusted: Tagline is now smaller and acts as a clean kicker line */
+        #showcase p {
+            font-size: 20px; 
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #cccccc;
+            margin: 0 0 15px 0; /* Pushes the main title down slightly */
+        }
+
+        /* Adjusted: Main business name is now larger and highly prominent */
         #showcase h1 {
-            font-size: 55px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 5px;
+            font-size: 52px; 
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        /* Mobile responsive fail-safes */
+        @media(max-width: 768px) {
+            #showcase { min-height: 450px; }
+            #showcase h1 { font-size: 32px; }
+            #showcase p { font-size: 16px; }
+            #showcase .container { padding: 20px; }
         }
 
         /* About Section */
