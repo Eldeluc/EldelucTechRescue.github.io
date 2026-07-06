@@ -68,7 +68,7 @@
         
         /* Updated Showcase Hero Section */
         #showcase {
-            min-height: 600px; /* Increased from 400px to give content breathing room at 100% zoom */
+            min-height: 600px;
             background: #1a1a1a url('https://raw.githubusercontent.com/Eldeluc/Eldeluc.github.io/master/Eldeluc_Tech_Rescue.png') no-repeat center center/contain;
             text-align: center;
             color: #fff;
@@ -76,34 +76,30 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px 0; /* Padding ensures content never hits the absolute edges */
+            padding: 40px 0;
             box-sizing: border-box;
         }
 
-        /* This container creates a solid, clean backing card so text never clashes with the graphic background */
         #showcase .container {
-            background: rgba(0, 0, 0, 0.75); /* Dark overlay for crisp contrast */
+            background: rgba(0, 0, 0, 0.75);
             padding: 35px 50px;
             border-radius: 8px;
-            border: 1px solid #229954; /* Subtle green accent border */
+            border: 1px solid #229954;
             display: inline-block;
             width: auto;
             max-width: 85%;
             box-sizing: border-box;
         }
 
-        /* Adjusted: Tagline is now smaller and acts as a clean kicker line */
-        /* Adjusted: Tagline is now much smaller, crisp, and clean */
         #showcase p {
-            font-size: 15px;            /* Dropped down from 20px for a clean look */
-            font-weight: 400;           /* Clean, readable font weight */
-            text-transform: uppercase;  /* Keeps the professional, all-caps styling */
-            letter-spacing: 4px;        /* Spreads the letters out nicely across the top */
-            color: rgba(255, 255, 255, 0.75); /* Slightly muted white so it doesn't fight the main title */
-            margin: 0 0 0 0;         /* Keeps a small gap above your main brand name */
+            font-size: 15px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0;
         }
 
-        /* Adjusted: Main business name is now larger and highly prominent */
         #showcase h1 {
             font-size: 56px; 
             font-weight: 900;
@@ -113,11 +109,10 @@
             margin: 0;
         }
 
-        /* Mobile responsive fail-safes */
         @media(max-width: 768px) {
             #showcase { min-height: 450px; }
             #showcase h1 { font-size: 32px; }
-            #showcase p { font-size: 12px !important; } /* Keeps it small on mobile phones */
+            #showcase p { font-size: 12px !important; }
             #showcase .container { padding: 20px; }
         }
 
@@ -196,7 +191,6 @@
             color: #229954;
         }
 
-        /* Dynamic Part Description Note */
         #part-description-note {
             font-style: italic;
             color: #666;
@@ -312,7 +306,6 @@
 
     <section id="showcase">
         <div class="container">
-            <!-- Tagline is now a paragraph tag so your font sizes work -->
             <p>Expert Computer Repair & IT Services</p>
         </div>
     </section>
@@ -393,14 +386,16 @@
         </div>
     </section>
 
+    <!-- NEW FORMSPREE INTEGRATION INSERTED HERE -->
     <section id="contact">
         <div class="container">
             <h2>Contact Us</h2>
             <p>Ready to get your computer fixed? Fill out the form below and we'll get back to you with a free quote and consultation.</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea id="issue-description" placeholder="Describe your computer issue..." rows="5" required></textarea>
+            
+            <form class="contact-form" action="https://formspree.io/f/mzdlwbqq" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <textarea id="issue-description" name="message" placeholder="Describe your computer issue..." rows="5" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </div>
@@ -413,72 +408,62 @@
 
     <script>
         // Global baseline hourly service values
-        const BASE_ACTIVE_LABOR_RATE = 60.00;  // Flat cost for physical hands-on work
-        const BASE_PASSIVE_LABOR_RATE = 20.00; // Reduced cost for hands-off background operations
+        const BASE_ACTIVE_LABOR_RATE = 60.00;  
+        const BASE_PASSIVE_LABOR_RATE = 20.00; 
 
-        // Defining the object blueprints using modern JS Class architecture
         class RepairJob {
             constructor(id, name, lowPartDesc, lowPartCost, highPartDesc, highPartCost, activeLabor, basePassiveLabor, dataModifier) {
                 this.id = id;
                 this.name = name;
-                
-                // Hardware Part Variables
                 this.low_end_part_desc = lowPartDesc;
                 this.low_end_part_cost = lowPartCost;
                 this.high_end_part_desc = highPartDesc;
                 this.high_end_part_cost = highPartCost;
-                
-                // Labor Standard Unit Hour Variables
                 this.active_labor_estimate = activeLabor;
                 this.base_passive_labor_estimate = basePassiveLabor;
-                
-                // Functional math callback to scale passive hours based on data volume sizes
                 this.data_modifier = dataModifier; 
             }
         }
 
-        // Job Array Instantiation Matrix
         const jobRegistry = [
             new RepairJob(
                 'drive_replacement',
-                'OS Install (Hard Drive Replacement)',
-                '500GB Western Digital Blue', 75.00,
-                '8TB Samsung M.2 SSD', 2500.00,
-                1.5, // Active hours (teardown, physical fitment, array initialization)
-                1.0, // Base passive hours (system deployment initialization)
-                (gb) => (gb / 300) // Adds 1 extra hour of passive transfer wait time per 300 GB
+                'Hard Drive / SSD Upgrade & OS Install',
+                '500GB Standard Budget SSD', 45.00,
+                '8TB Enterprise High-Capacity SSD', 620.00,
+                1.5, 
+                1.0, 
+                (gb) => (gb / 300) 
             ),
             new RepairJob(
                 'virus_removal',
                 'Virus Removal & OS Environment Optimization',
-                'Free License Software Scans', 0.00,
-                'Malwarebytes Premium License', 45.00,
-                1.0, // Active hours (manual log sweeping, registry editing)
-                1.5, // Base passive hours (deep boot system sweeps and sector verification)
-                (gb) => (gb / 500) // Adds 1 passive hour per 500 GB scanned
+                'No Hardware Required', 0.00,
+                'Premium Anti-Malware Software License', 40.00,
+                1.0, 
+                2.5, 
+                (gb) => (gb / 500) 
             ),
             new RepairJob(
                 'data_recovery',
                 'Advanced File Recovery & Storage Extraction',
-                'PNY USB 64GB Flash Drive', 15.00,
-                'LACIE 4TB Rugged External Protection HDD', 250.00,
-                1.0, // Active hours (mounting hardware, bad sector overriding setup)
-                3.0, // Base passive hours (deep sector parsing time)
-                // Data recovery requires heavily custom passive math. Let's make it scale aggressively!
-                (gb) => (gb / 100) // Data Recovery intensive: Adds 1 full hour of passive computing time per 100 GB processed
+                'USB 64GB Flash Drive Backup Medium', 15.00,
+                '4TB Rugged External Protection HDD', 130.00,
+                1.0, 
+                3.0, 
+                (gb) => (gb / 100) 
             ),
             new RepairJob(
                 'general_repair',
                 'General System Cleanup & Thermal Maintenance',
-                'Thermal Paste Reapplication', 12.00,
+                'High-Efficiency Thermal Paste and Pads', 12.00,
                 'Premium Quiet Replacement Cooling Fan', 35.00,
-                1.0, // Active hours (disassembly, heatsink removal, physical debris detailing)
-                0.5, // Base passive hours (burn-in hardware stability stress test)
-                (gb) => 0 // Data amount does not impact basic hardware thermal rebuild timelines
+                1.0, 
+                0.5, 
+                (gb) => 0 
             )
         ];
 
-        // Core execution and event lifecycle handling functions
         function initializeEstimator() {
             const selectEl = document.getElementById('job-select');
             selectEl.innerHTML = '';
@@ -509,7 +494,6 @@
 
             if (!targetJob) return;
 
-            // 1. Process Hardware Segment
             let partCost = 0;
             let partDescriptionText = "";
             
@@ -524,20 +508,14 @@
             }
             document.getElementById('part-description-note').innerText = partDescriptionText;
 
-            // 2. Compute Labor Segment using Custom Class Classifications
             const activeHours = targetJob.active_labor_estimate;
-            
-            // Calculate dynamic passive hour curve using the custom lambda function variable assigned per class structure
             const calculatedPassiveHours = targetJob.base_passive_labor_estimate + targetJob.data_modifier(totalDataGigabytes);
-            
-            // Round nicely to standard half-hour fractions
             const roundedPassiveHours = Math.round(calculatedPassiveHours * 2) / 2;
 
             const activeLaborTotal = activeHours * BASE_ACTIVE_LABOR_RATE;
             const passiveLaborTotal = roundedPassiveHours * BASE_PASSIVE_LABOR_RATE;
             const finalCalculatedBill = partCost + activeLaborTotal + passiveLaborTotal;
 
-            // 3. Inject Calculations into Invoicing Matrix Breakdown Display
             document.getElementById('receipt-part-cost').innerText = "$" + partCost.toFixed(2);
             document.getElementById('receipt-active-hours').innerText = activeHours.toFixed(1);
             document.getElementById('receipt-active-cost').innerText = "$" + activeLaborTotal.toFixed(2);
@@ -545,11 +523,9 @@
             document.getElementById('receipt-passive-cost').innerText = "$" + passiveLaborTotal.toFixed(2);
             document.getElementById('receipt-total-cost').innerText = "$" + finalCalculatedBill.toFixed(2);
 
-            // Automatically construct user message layout template
             document.getElementById('issue-description').value = `Hello! I generated an estimate package using the tool for: "${targetJob.name}".\nHardware Level: ${partTierIsHigh === 1 ? "High End" : "Low End"}\nData Volume Transfer Range: ${totalDataGigabytes} GB\nProject Estimate Reference: $${finalCalculatedBill.toFixed(2)}\n\nAdditional notes about my computer issue: `;
         }
 
-        // Initialize script logic hooks on window load-in
         window.onload = function() {
             initializeEstimator();
         };
