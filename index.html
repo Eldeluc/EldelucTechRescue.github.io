@@ -441,9 +441,9 @@
         const jobRegistry = [
             new RepairJob(
                 'drive_replacement',
-                'Hard Drive / SSD Upgrade & OS Install',
-                '500GB Standard Budget SSD', 45.00,
-                '8TB Enterprise High-Capacity SSD', 620.00,
+                'OS Install (Hard Drive Replacement)',
+                '500GB Western Digital Blue', 75.00,
+                '8TB Samsung M.2 SSD', 2500.00,
                 1.5, // Active hours (teardown, physical fitment, array initialization)
                 1.0, // Base passive hours (system deployment initialization)
                 (gb) => (gb / 300) // Adds 1 extra hour of passive transfer wait time per 300 GB
@@ -451,17 +451,17 @@
             new RepairJob(
                 'virus_removal',
                 'Virus Removal & OS Environment Optimization',
-                'No Hardware Required', 0.00,
-                'Premium Anti-Malware Software License', 40.00,
+                'Free License Software Scans', 0.00,
+                'Malwarebytes Premium License', 45.00,
                 1.0, // Active hours (manual log sweeping, registry editing)
-                2.5, // Base passive hours (deep boot system sweeps and sector verification)
+                1.5, // Base passive hours (deep boot system sweeps and sector verification)
                 (gb) => (gb / 500) // Adds 1 passive hour per 500 GB scanned
             ),
             new RepairJob(
                 'data_recovery',
                 'Advanced File Recovery & Storage Extraction',
-                'USB 64GB Flash Drive Backup Medium', 15.00,
-                '4TB Rugged External Protection HDD', 130.00,
+                'PNY USB 64GB Flash Drive', 15.00,
+                'LACIE 4TB Rugged External Protection HDD', 250.00,
                 1.0, // Active hours (mounting hardware, bad sector overriding setup)
                 3.0, // Base passive hours (deep sector parsing time)
                 // Data recovery requires heavily custom passive math. Let's make it scale aggressively!
@@ -470,7 +470,7 @@
             new RepairJob(
                 'general_repair',
                 'General System Cleanup & Thermal Maintenance',
-                'High-Efficiency Thermal Paste and Pads', 12.00,
+                'Thermal Paste Reapplication', 12.00,
                 'Premium Quiet Replacement Cooling Fan', 35.00,
                 1.0, // Active hours (disassembly, heatsink removal, physical debris detailing)
                 0.5, // Base passive hours (burn-in hardware stability stress test)
